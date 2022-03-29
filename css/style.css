@@ -1,0 +1,138 @@
+.bg-game1 {
+    background: white url("../img/background_game1.jpeg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-game2 {
+    background: white url("../img/background_game3.jpeg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-game3 {
+    background: white url("../img/background_game2.jpeg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.game-href {
+    display: block;
+    color: #222222;
+    border-radius: 10px;
+    height: 250px;
+    padding-top: 190px;
+}
+
+a.game-href {
+    text-decoration: none;
+}
+
+a.game-href:hover {
+    color: #17a2b8;
+}
+
+a.footer {
+    color: lightgray;
+    text-decoration: none;
+}
+
+a.footer:hover {
+    color: darkgray;
+}
+
+.container-gray {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.jeu {
+    border: dimgray solid 2px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px #cccccc;
+    min-width: 100vh;
+}
+
+#result {
+    border: #17a2b8 solid 2px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px #17a2b8;
+    min-width: 100vh;
+}
+
+body {
+    font-family: sans-serif;
+    display: grid;
+    min-height: 100vh;
+}
+
+div.game3, div.game2, div.game1 {
+    width: 60%;
+}
+
+div.jeu div.pr-4.pl-4.mb-3 {
+    min-width: 100vh;
+}
+
+/*    CSS Timer   */
+.base-timer {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: limegreen;
+}
+
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.timer {
+    position: center;
+}

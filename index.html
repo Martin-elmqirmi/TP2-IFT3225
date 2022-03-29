@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini jeux</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/vexflow/releases/vexflow-debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body class="">
+<header class="text-center bg-info text-white">
+   <h1 class="pt-4 pb-4">Mini jeux musicaux</h1>
+</header>
+
+<main class="container">
+    <div class="h4 text-center mt-5">
+        Voici quelques mini-jeux qui vont vous permettre de tester vos connaissances du cycles des quintes
+    </div>
+    <hr>
+    <div class="p-4">
+        <div class="row game-menu">
+            <div class="col-lg-4 mb-5">
+                <h5 class="text-center">Testez vos connaissances sur les gammes !</h5>
+                <a href="#" role="button" class="bg-game1 mb-2 game-href menu_game1">
+                    <div class="container-gray">
+                        <h2 class="text-center">Jeu 1</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                <h5 class="text-center">Testez vos connaissances sur les tonalités !</h5>
+                <a href="#" role="button" class="bg-game2 mb-2 game-href menu_game2">
+                    <div class="container-gray">
+                        <h2 class="text-center">Jeu 2</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                <h5 class="text-center">Testez vos connaissances sur les notes et tonalités !</h5>
+                <a href="#" role="button" class="bg-game3 mb-2 game-href menu_game3">
+                    <div class="container-gray">
+                        <h2 class="text-center">Jeu 3</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5 game-questions">
+            <div class="col-3 timer">
+                <div id="coolDown" class="text-center"> </div>
+                <button type="button" id="next" class="btn btn-dark ml-3 mb-5 mr-5 mt-4">
+                    Suivant <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="game1 mb-4">
+                <div class="col-9 jeu">
+                    <h3 class="text-center pt-3">Jeu 1</h3>
+                    <hr>
+                    <div class="pr-5 pl-5 mb-3" id="question-1_1">
+                        <p class="text-center pt-4 h4">Combien de dièses y a t-il dans la gamme de ré majeur ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <select class="form-control form-control-lg">
+                                <option id="answer11_1" name="question11" value="0">2 (#)</option>
+                                <option id="answer12_1" name="question11" value="0">1 (#)</option>
+                                <option id="answer13_1" name="question11" value="1">4 (#)</option>
+                                <option id="answer14_1" name="question11" value="0">3 (#)</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div class="pr-5 pl-5 mb-3" id="question-1_2">
+                        <p class="text-center pt-4 h4">La gamme de si mineur a t-elle 2 ou 3 dièses ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <select class="form-control form-control-lg">
+                                <option id="answer11_2" name="question12" value="0">3 (#)</option>
+                                <option id="answer12_2" name="question12" value="1">2 (#)</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div class="pr-5 pl-5 mb-3" id="question-1_3">
+                        <p class="text-center pt-4 h4">Les altérations de la gamme fa mineur sont elles
+                            des bémoles ou des dièses ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <select class="form-control form-control-lg">
+                                <option id="answer11_3" name="question13" value="0">Dièses</option>
+                                <option id="answer12_3" name="question13" value="1">Bémoles</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game2 mb-4">
+                <div class="col-9 offset-lg-5 jeu">
+                    <h3 class="text-center pt-3">Jeu 2</h3>
+                    <hr>
+                    <div class="pr-5 pl-5 mb-3" id="question-2_1">
+                        <p class="text-center pt-4 h4">Quelle est la tonalité majeure qui contient 3 dièses ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <select class="form-control form-control-lg">
+                                <option id="answer21_1" name="question21" value="0">do</option>
+                                <option id="answer22_1" name="question21" value="0">ré</option>
+                                <option id="answer23_1" name="question21" value="0">mi</option>
+                                <option id="answer24_1" name="question21" value="0">fa</option>
+                                <option id="answer25_1" name="question21" value="0">sol</option>
+                                <option id="answer26_1" name="question21" value="1">la</option>
+                                <option id="answer27_1" name="question21" value="0">si</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div class="pr-5 pl-5 mb-3" id="question-2_2">
+                        <p class="text-center pt-4 h4">Quelle sont les tonalités sans altération à la clé ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" name="question22" type="checkbox"
+                                       id="answer21_2" value="1">
+                                <label class="form-check-label" for="answer21_2">do majeur</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" name="question22" type="checkbox"
+                                       id="answer22_2" value="0">
+                                <label class="form-check-label" for="answer22_2">sol majeur</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" name="question22" type="checkbox"
+                                       id="answer23_2" value="0">
+                                <label class="form-check-label" for="answer23_2">ré mineur</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" name="question22" type="checkbox"
+                                       id="answer24_2" value="1">
+                                <label class="form-check-label" for="answer24_2">la mineur</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="pr-5 pl-5 mb-3" id="question-2_3">
+                        <p class="text-center pt-4 h4">Quelle est la tonalité mineur qui contient 1 dièse ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <select class="form-control form-control-lg">
+                                <option id="answer21_3" name="question23" value="0">si</option>
+                                <option id="answer23_3" name="question23" value="1">mi</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game3">
+                <div class="col-9 offset-lg-5 jeu">
+                    <h3 class="text-center pt-3">Jeu 1</h3>
+                    <hr>
+                    <div class="pr-4 pl-4 mb-3" id="question-3_1">
+                        <p class="text-center pt-4 h4">Combien de dièses y a t-il dans la gamme de ré majeur ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer31_1" value="false">
+                                <label class="form-check-label" for="answer31_1">2 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer32_1" value="false">
+                                <label class="form-check-label" for="answer32_1">1 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer33_1" value="true">
+                                <label class="form-check-label" for="answer33_1">4 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer34_1" value="false">
+                                <label class="form-check-label" for="answer34_1">3 (#)</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="pr-4 pl-4 mb-3" id="question-3_2">
+                        <p class="text-center pt-4 h4">La gamme de si mineur a t-elle 2 ou 3 dièses ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer31_2" value="true">
+                                <label class="form-check-label" for="answer31_2">2 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer32_2" value="false">
+                                <label class="form-check-label" for="answer32_2">1 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer33_2" value="false">
+                                <label class="form-check-label" for="answer33_2">4 (#)</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer34_2" value="false">
+                                <label class="form-check-label" for="answer34_2">3 (#)</label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="pr-4 pl-4 mb-3" id="question-3_3">
+                        <p class="text-center pt-4 h4">Les altérations de la gamme fa mineur sont elles des bémoles ou
+                            des dièses ?</p>
+                        <hr>
+                        <form class="text-center pb-4 pt-2">
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer31_3" value="false">
+                                <label class="form-check-label" for="answer31_3">Dièses</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-5">
+                                <input class="form-check-input" type="checkbox" id="answer32_3" value="false">
+                                <label class="form-check-label" for="answer32_3">Bémoles</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5" id="result">
+            <h4 class="text-center pt-3">Résultat du quizz</h4>
+            <hr>
+            <div id="result-content">
+                <p class="text-center">Vous avez répondu bon à
+                    <span id="nb-questions-answer">___</span>
+                    question(s)</p>
+                <ul>
+                    <li>Question 1 : <span id="result-question1"></span></li>
+                    <li>Question 2 : <span id="result-question2"></span></li>
+                    <li>Question 3 : <span id="result-question3"></span></li>
+                </ul>
+                <button type="button" id="back-menu" class="btn btn-dark float-right mb-5 mr-5 mt-4">
+                    Revenir au menu <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="rounded-bottom bg-info p-3">
+    <div class="text-white text-center">
+        Vous pouvez aller réviser vos connaissances sur le cycles des quintes via le lien ci-dessous :
+        <br>
+        <a class="footer" href="https://fr.wikipedia.org/wiki/Tonalité_relative" target="_blank">
+            fr.wikipedia.org/wiki/Tonalité_relative
+        </a>
+    </div>
+</footer>
+</body>
+
+<!-- JS  -->
+<script src="js/game.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/vexflow.js"></script>
+</html>
